@@ -1,0 +1,32 @@
+1.Explain the core components of flume
+   * The core components of Flume are:
+        Event- The single log entry or unit of data that is transported.
+        Source- This is the component through which data enters Flume workflows.
+        Sink-It is responsible for transporting data to the desired destination.
+        Channel- it is the duct between the Sink and Source.
+        Agent- Any JVM that runs Flume.
+        Client- The component that transmits event to the source that operates with the agent.
+
+
+2.Can flume provide 100% reliability while transfering the data
+   * Yes,Apache Flume provides end to end reliability because of its transactional approach in data flow.  
+
+3.Explain the consolidation in flume
+   * Consolidation collect data from different sources even it's different flume agents.
+   * Flume source can collect all data flow from different sources and flows through channel and sink.
+   * Finally send this data to HDFS or target destination.
+
+4.Explain what is an event in flume
+   * Event- The single log entry or unit of data that is transported.
+   * A unit of data with set of string attribute called Flume event.
+   * The external source like web-server send events to the source.
+   * Internally Flume has inbuilt functionality to understand the source format.
+   * Each log file is consider as an event.
+   * Each event has header and value sectors, which has header information and appropriate value that assign to articular header.
+   * A byte payload with optional string headers that represent the unit of data that Flume can transport from it’s point of origination to it’s final destination.
+
+5.Explain what is an agent in flume
+   * Agent- Any JVM that runs Flume.
+   * A flume agent is JVM holds the flume core components(source, channel, sink) through which events flow from an external source like web-servers to destination like HDFS.
+   * Agent is heart of the Apache Flime.
+* An independent process that hosts flume components such as sources, channels and sinks, and thus has the ability to receive, store and forward events to their next-hop destination. 
